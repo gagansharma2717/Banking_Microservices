@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+
+  accounts:
+    image: gagansharma2717/accounts_service:latest
+    mem_limit: 700m
+    ports:
+      - "8080:8080"
+    networks:
+      - gagansharma2717-network
+    
+  loans:
+    image: gagansharma2717/loans_service:latest
+    mem_limit: 700m
+    ports:
+      - "8090:8090"
+    networks:
+      - gagansharma2717-network
+    
+  cards:
+    image: gagansharma2717/cards_service:latest
+    mem_limit: 700m
+    ports:
+      - "9000:9000"
+    networks:
+      - gagansharma2717-network
+    
+networks:
+  gagansharma2717-network:
