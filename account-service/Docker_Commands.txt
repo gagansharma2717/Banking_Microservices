@@ -1,0 +1,73 @@
+# Create New Build
+mvn clean install
+
+# Run Spring-Boot App
+mvn spring-boot:run
+
+# Run Spring-Boot App
+java -jar jarname
+
+# Create new docker image
+docker build . -t gagansharma2717/account_service
+
+# Copy docker image
+docker tag gagansharma2717/accounts gagansharma2717/accounts_service
+
+# Remove docker image
+docker rmi image-name
+docker rmi gagansharma2717/accounts
+
+# Remove docker container
+docker rm container id
+docker rm 4816
+
+# Check docker images
+docker images
+
+# Inspect
+docker image inspect image-id
+docker image inspect 959d5
+
+# Run docker image
+docker run -p 8080:8080 gagansharma2717/accounts_service
+8080:8080 exposed to outside world:internal docker architecture
+
+# Running Docker Process
+docker ps 
+
+# Run another instance of same image
+docker run -p 8081:8080 gagansharma2717/accounts_service
+
+# Docker logs
+docker logs container-id
+docker logs ab89
+
+# Dynamic logs or Continuous logs
+ docker logs -f ab89 // Here f stand for follow
+ 
+# Stop Running container 
+docker stop container-id
+docker stop ab89
+
+# Check all docker containers either running or stopped
+docker ps -a
+
+# Restart docker cotainer
+docker start container-id
+ 
+or you can restart mutiple containers at one go with
+docker start container-id container-id
+
+# Pause and Unpause Docker Container
+docker pause container-id
+docker unpause container-id
+
+# Inspect docker container
+docker container inspect container-id
+
+# Immediately Kill docker container
+docker kill conatiner-id
+
+# Docker stats
+docker stats
+
