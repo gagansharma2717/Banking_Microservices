@@ -71,3 +71,14 @@ docker kill conatiner-id
 # Docker stats
 docker stats
 
+# Build docker image with buildpacks
+mvn spring-boot:build-image
+
+# docker push and pull
+docker push docker.io/username/image_name
+docker pull docker.io/username/image_name
+
+# docker-compose to start and stop all services in a single go
+docker-compose up
+docker-compose stop 
+# Requirements -> Check docker-compose is installed or not and then write docker-compose.yml file
