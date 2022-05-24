@@ -71,3 +71,9 @@ docker kill conatiner-id
 # Docker stats
 docker stats
 
+# Build docker image with buildpacks
+mvn spring-boot:build-image
+
+# docker push and pull
+docker push docker.io/username/image_name
+docker pull docker.io/username/image_name
