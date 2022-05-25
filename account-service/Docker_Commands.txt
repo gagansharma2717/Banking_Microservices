@@ -9,9 +9,13 @@ java -jar jarname
 
 # Create new docker image
 docker build . -t gagansharma2717/account_service
+docker build . -t gagansharma2717/cards_service
+docker build . -t gagansharma2717/configuration_server
+docker build . -t gagansharma2717/loans_service
 
 # Copy docker image
 docker tag gagansharma2717/accounts gagansharma2717/accounts_service
+docker tag gagansharma2717/account_service gagansharma2717/accounts_service
 
 # Remove docker image
 docker rmi image-name
@@ -30,6 +34,7 @@ docker image inspect 959d5
 
 # Run docker image
 docker run -p 8080:8080 gagansharma2717/accounts_service
+docker run -p 8071:8071 gagansharma2717/configuration_server
 8080:8080 exposed to outside world:internal docker architecture
 
 # Running Docker Process
