@@ -1,9 +1,9 @@
 package com.banking_service1.account_service.controller;
 
+import com.banking_service1.account_service.client.CardsFeignClient;
+import com.banking_service1.account_service.client.LoansFeignClient;
 import com.banking_service1.account_service.config.AccountsServiceConfig;
-import com.banking_service1.account_service.model.Accounts;
-import com.banking_service1.account_service.model.Customer;
-import com.banking_service1.account_service.model.Properties;
+import com.banking_service1.account_service.model.*;
 import com.banking_service1.account_service.repository.AccountsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +15,8 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 
+import java.util.List;
+
 
 @RestController
 public class AccountsController {
@@ -24,6 +26,12 @@ public class AccountsController {
 
     @Autowired
     AccountsServiceConfig accountsConfig;
+
+    @Autowired
+    LoansFeignClient loansFeignClient;
+
+    @Autowired
+    CardsFeignClient cardsFeignClient;
 
     @PostMapping("/myAccount")
     public Accounts getAccountDetails(@RequestBody Customer customer) {
@@ -46,4 +54,18 @@ public class AccountsController {
         return jsonStr;
     }
 
+    @PostMapping("/myCustomerDetails")
+    public CustomerDetails myCustomerDetails(@RequestBody Customer customer) {
+        Accounts accounts = accountsRepository.findByCustomerId(customer.getCustomerId());
+        List<Loans> loans = loansFeignClient.getLoansDetails(customer);
+        List<Cards> cards = cardsFeignClient.getCardDetails(customer);
+
+        CustomerDetails customerDetails = new CustomerDetails();
+        customerDetails.setAccounts(accounts);
+        customerDetails.setLoans(loans);
+        customerDetails.setCards(cards);
+
+        return customerDetails;
+
+    }
 }
