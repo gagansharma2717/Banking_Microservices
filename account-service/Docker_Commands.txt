@@ -8,9 +8,10 @@ mvn spring-boot:run
 java -jar jarname
 
 # Create new docker image
-docker build . -t gagansharma2717/account_service
+docker build . -t gagansharma2717/accounts_service
 docker build . -t gagansharma2717/cards_service
 docker build . -t gagansharma2717/configuration_server
+docker build . -t gagansharma2717/eureka_server
 docker build . -t gagansharma2717/loans_service
 
 # Copy docker image
