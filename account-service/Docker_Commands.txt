@@ -85,5 +85,5 @@ docker pull docker.io/username/image_name
 
 # docker-compose to start and stop all services in a single go
 docker-compose up
--
+docker-compose stop
 # Requirements -> Check docker-compose is installed or not and then write docker-compose.yml file
