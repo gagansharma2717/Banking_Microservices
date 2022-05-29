@@ -5,6 +5,8 @@ import com.banking_service1.account_service.client.LoansFeignClient;
 import com.banking_service1.account_service.config.AccountsServiceConfig;
 import com.banking_service1.account_service.model.*;
 import com.banking_service1.account_service.repository.AccountsRepository;
+
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -55,6 +57,7 @@ public class AccountsController {
     }
 
     @PostMapping("/myCustomerDetails")
+    @CircuitBreaker(name = "detailsForCustomerSupportApp",fallbackMethod="myCustomerDetailsFallBack")
     public CustomerDetails myCustomerDetails(@RequestBody Customer customer) {
         Accounts accounts = accountsRepository.findByCustomerId(customer.getCustomerId());
         List<Loans> loans = loansFeignClient.getLoansDetails(customer);
@@ -66,6 +69,15 @@ public class AccountsController {
         customerDetails.setCards(cards);
 
         return customerDetails;
-
     }
+
+    private CustomerDetails myCustomerDetailsFallBack(Customer customer, Throwable t) {
+        Accounts accounts = accountsRepository.findByCustomerId(customer.getCustomerId());
+        List<Loans> loans = loansFeignClient.getLoansDetails(customer);
+        CustomerDetails customerDetails = new CustomerDetails();
+        customerDetails.setAccounts(accounts);
+        customerDetails.setLoans(loans);
+        return customerDetails;
+    }
+
 }
