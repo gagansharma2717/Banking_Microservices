@@ -7,6 +7,7 @@ import com.banking_service1.account_service.model.*;
 import com.banking_service1.account_service.repository.AccountsRepository;
 
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
 import io.github.resilience4j.retry.annotation.Retry;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -82,4 +83,13 @@ public class AccountsController {
         return customerDetails;
     }
 
+    @GetMapping("/sayHello")
+    @RateLimiter(name = "sayHello", fallbackMethod = "sayHelloFallback")
+    public String sayHello() {
+        return "Hello, Welcome to YeezyBank";
+    }
+
+    private String sayHelloFallback(Throwable t) {
+        return "Hi, Welcome to YeezyBank";
+    }
 }
