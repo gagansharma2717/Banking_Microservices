@@ -12,6 +12,7 @@ docker build . -t gagansharma2717/accounts_service
 docker build . -t gagansharma2717/cards_service
 docker build . -t gagansharma2717/configuration_server
 docker build . -t gagansharma2717/eureka_server
+docker build . -t gagansharma2717/gateway_server
 docker build . -t gagansharma2717/loans_service
 
 # Copy docker image
