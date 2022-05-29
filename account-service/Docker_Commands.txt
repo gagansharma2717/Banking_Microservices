@@ -89,3 +89,6 @@ docker pull docker.io/username/image_name
 docker-compose up
 docker-compose stop
 # Requirements -> Check docker-compose is installed or not and then write docker-compose.yml file
+
+# Docker Logs
+docker logs conatiner-id
