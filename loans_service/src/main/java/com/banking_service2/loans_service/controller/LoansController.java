@@ -1,11 +1,14 @@
 package com.banking_service2.loans_service.controller;
 
 import java.util.List;
+import java.util.logging.Logger;
+
 import com.banking_service2.loans_service.config.LoansServiceConfig;
 import com.banking_service2.loans_service.model.Customer;
 import com.banking_service2.loans_service.model.Loans;
 import com.banking_service2.loans_service.model.Properties;
 import com.banking_service2.loans_service.repository.LoansRepository;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,6 +29,7 @@ public class LoansController {
 
     @PostMapping("/myLoans")
     public List<Loans> getLoansDetails(@RequestBody Customer customer) {
+        System.out.println("Invoking Loans Service");
         List<Loans> loans = loansRepository.findByCustomerIdOrderByStartDtDesc(customer.getCustomerId());
         if(loans != null) {
             return loans;
