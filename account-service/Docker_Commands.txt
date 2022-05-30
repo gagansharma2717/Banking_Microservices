@@ -95,3 +95,6 @@ docker logs conatiner-id
 
 # Zipikin
 docker run -d -p 9411:9411 openzipkin/zipkin
+
+# latest RabbitMQ 3.10
+docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.10-management
