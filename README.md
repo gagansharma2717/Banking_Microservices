@@ -60,3 +60,7 @@
 <p align="left">
   <img src="screenshots/15.png"/>
 </p>
+<h3>Zipkin Server</h3>
+<p align="left">
+  <img src="screenshots/16.png"/>
+</p>
