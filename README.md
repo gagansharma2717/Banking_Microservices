@@ -64,3 +64,16 @@
 <p align="left">
   <img src="screenshots/16.png"/>
 </p>
+<h3>RabbitMQ Server</h3>
+<p align="left">
+  <img src="screenshots/17.png"/>
+</p>
+<h3>RabbitMQ Messages</h3>
+<p align="left">
+  <img src="screenshots/18.png"/>
+</p>
+<h3>RabbitMQ Messages Information</h3>
+<p align="left">
+  <img src="screenshots/19.png"/>
+</p>
+
