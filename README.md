@@ -76,7 +76,7 @@
 <p align="left">
   <img src="screenshots/19.png"/>
 </p>
-<h3>Prometheus DashBoard</h3>
+<h3>Prometheus Dashboard</h3>
 <p align="left">
   <img src="screenshots/20.png"/>
 </p>
@@ -84,7 +84,7 @@
 <p align="left">
   <img src="screenshots/21.png"/>
 </p>
-<h3>Grafana DashBoard</h3>
+<h3>Grafana Dashboard</h3>
 <p align="left">
   <img src="screenshots/22.png"/>
 </p>
