@@ -12,11 +12,13 @@ import org.springframework.web.bind.annotation.*;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @RestController
 public class CardsController {
 
+    private static final Logger logger = LoggerFactory.getLogger(CardsController.class);
     @Autowired
     private CardsRepository cardsRepository;
 
@@ -25,7 +27,9 @@ public class CardsController {
 
     @PostMapping("/myCards")
     public List<Cards> getCardDetails(@RequestHeader("yeezybank-correlation-id") String correlationid, @RequestBody Customer customer) {
+        logger.info("getCardDetails() method started");
         List<Cards> cards = cardsRepository.findByCustomerId(customer.getCustomerId());
+        logger.info("getCardDetails() method ended");
         if(cards != null) {
             return cards;
         } else {
