@@ -1,3 +1,11 @@
+Application Start Flow
+1. Configuration Server
+2. Eureka Server
+3. Accounts Service
+4. Loans Service
+5. Cards Service
+6. Gateway Server
+
 # Create New Build
 mvn clean install
 
