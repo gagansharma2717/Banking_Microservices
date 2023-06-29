@@ -106,3 +106,15 @@ docker run -d -p 9411:9411 openzipkin/zipkin
 
 # latest RabbitMQ 3.10
 docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.10-management
+
+Start Project 
+Go to Monitoring in account service and open cmd and type docker-compose up to start all services
+Add dashoboard to Grafana
+First we need to add data source as http://prometheus:9090
+and Add these 2 dashboards in Dashboard -> Import
+https://grafana.com/grafana/dashboards/4701-jvm-micrometer/
+https://grafana.com/grafana/dashboards/11378-justai-system-monitor/
+
+And Select data source as Prometheus to display the data
+
+

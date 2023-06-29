@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="account-service/src/main/java"/>
+	<classpathentry kind="src" path="account-service/src/test/java"/>
+	<classpathentry kind="src" path="cards_service/src/main/java"/>
+	<classpathentry kind="src" path="cards_service/src/test/java"/>
+	<classpathentry kind="src" path="configuration_server/src/main/java"/>
+	<classpathentry kind="src" path="configuration_server/src/test/java"/>
+	<classpathentry kind="src" path="eureka_server/src/main/java"/>
+	<classpathentry kind="src" path="eureka_server/src/test/java"/>
+	<classpathentry kind="src" path="gateway_server/src/main/java"/>
+	<classpathentry kind="src" path="gateway_server/src/test/java"/>
+	<classpathentry kind="src" path="loans_service/src/main/java"/>
+	<classpathentry kind="src" path="loans_service/src/test/java"/>
+	<classpathentry kind="lib" path="account-service/.mvn/wrapper/maven-wrapper.jar"/>
+	<classpathentry kind="lib" path="account-service/target/account-service-0.0.1-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="cards_service/.mvn/wrapper/maven-wrapper.jar"/>
+	<classpathentry kind="lib" path="cards_service/target/cards_service-0.0.1-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="configuration_server/.mvn/wrapper/maven-wrapper.jar"/>
+	<classpathentry kind="lib" path="configuration_server/target/configuration_server-0.0.1-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="eureka_server/.mvn/wrapper/maven-wrapper.jar"/>
+	<classpathentry kind="lib" path="eureka_server/target/eureka_server-0.0.1-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="gateway_server/.mvn/wrapper/maven-wrapper.jar"/>
+	<classpathentry kind="lib" path="gateway_server/target/gateway_server-0.0.1-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="loans_service/.mvn/wrapper/maven-wrapper.jar"/>
+	<classpathentry kind="lib" path="loans_service/target/loans_service-0.0.1-SNAPSHOT.jar"/>
+	<classpathentry kind="output" path="account-service/target/classes"/>
+</classpath>
